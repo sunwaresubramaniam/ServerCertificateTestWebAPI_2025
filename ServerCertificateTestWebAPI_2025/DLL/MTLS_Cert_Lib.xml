@@ -119,22 +119,22 @@
             To Fetch the Data from Respective WebSite For GET Method
             </summary>
             <param name="certificate">Pass the Certificate</param>
-            <param name="url">Enter the Website Url</param>
+            <param name="url">Enter the Request Url</param>
             <returns>Returns Http Response Message</returns>
         </member>
         <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.HttpClientGet(System.String)">
             <summary>
             To Fetch the Data from Respective WebSite For GET Method
             </summary>
-            <param name="url">Enter the Website Url</param>
+            <param name="url">Enter the Request Url</param>
             <returns>Returns the Http Response Message</returns>
         </member>
         <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.HttpClientGet(System.Net.Http.HttpClient,System.String)">
             <summary>
             To Fetch the Data from Respective WebSite For GET Method
             </summary>
-            <param name="httpClient"></param>
-            <param name="url"></param>
+            <param name="httpClient">Pass the HttpClient</param>
+            <param name="url">Enter the Request Url</param>
             <returns>Returns the Http Response Message</returns>
         </member>
         <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.HttpClientPost(System.Security.Cryptography.X509Certificates.X509Certificate2,System.String,System.String)">
@@ -142,16 +142,16 @@
             To post/fetch the Data from Respective WebSite For POST Method
             </summary>
             <param name="certificate">Pass the Certificate</param>
-            <param name="url">Enter the Website Url</param>
-            <param name="jsonData">Pass the Json Data</param>
+            <param name="url">Enter the Request Url</param>
+            <param name="jsonData">Enter the Json Data</param>
             <returns>Returns the Http Response Message</returns>
         </member>
         <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.HttpClientPost(System.String,System.String)">
             <summary>
             To post/fetch the Data from Respective WebSite For POST Method
             </summary>
-            <param name="url">Enter the Website Url</param>
-            <param name="jsonData">Pass the Json Data</param>
+            <param name="url">Enter the Request Url</param>
+            <param name="jsonData">Enter the Json Data</param>
             <returns>Returns the Http Response Message</returns>
         </member>
         <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.HttpClientPost(System.Net.Http.HttpClient,System.String,System.String)">
@@ -159,8 +159,8 @@
             To post/fetch the Data from Respective WebSite For POST Method
             </summary>
             <param name="httpClient">Pass the HttpClient</param>
-            <param name="url">Enter the Website Url</param>
-            <param name="jsonData">Pass the Json Data</param>
+            <param name="url">Enter the Request Url</param>
+            <param name="jsonData">Enter the Json Data</param>
             <returns>Returns the Http Response Message</returns>
         </member>
         <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.GetHttpResponseContent(System.Net.Http.HttpResponseMessage)">
@@ -179,6 +179,35 @@
             <param name="response">Pass the HttpResponse Messgae</param>
             <returns></returns>
             <exception cref="T:System.Net.Http.HttpRequestException">Returns the Http Response Content</exception>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.HttpClientSend(MTLS_Cert_Lib.HttpMethodEnum,System.Security.Cryptography.X509Certificates.X509Certificate2,System.String,System.String)">
+            <summary>
+            To Send the Request
+            </summary>
+            <param name="httpMethod">Request Method POS/GET/etc get from HttpMethodEnum</param>
+            <param name="certificate">Pass the X509 Certificate</param>
+            <param name="requestUrl">Enter the Request Url</param>
+            <param name="jsonData">Pass the JsonData if Required</param>
+            <returns>Return  the Output Response</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.HttpClientSend(MTLS_Cert_Lib.HttpMethodEnum,System.String,System.String)">
+            <summary>
+            To Send the Request
+            </summary>
+            <param name="httpMethod">Request Method POS/GET/etc get from HttpMethodEnum</param>
+            <param name="requestUrl">Enter the Request Url</param>
+            <param name="jsonData">Pass the JsonData if Required</param>
+            <returns></returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.HttpClientSend(MTLS_Cert_Lib.HttpMethodEnum,System.Net.Http.HttpClient,System.String,System.String)">
+            <summary>
+            To Send the Request
+            </summary>
+            <param name="httpMethod">Request Method POS/GET/etc get from HttpMethodEnum</param>
+            <param name="httpClient">Pass the HttpClient</param>
+            <param name="requestUrl">Enter the Request Url</param>
+            <param name="jsonData">Pass the JsonData if Required</param>
+            <returns></returns>
         </member>
         <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.DeserializeJson``1(System.String)">
             <summary>
