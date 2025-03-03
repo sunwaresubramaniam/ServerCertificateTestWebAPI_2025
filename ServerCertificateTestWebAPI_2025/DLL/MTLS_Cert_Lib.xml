@@ -1,0 +1,396 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MTLS_Cert_Lib</name>
+    </assembly>
+    <members>
+        <member name="M:MTLS_Cert_Lib.CacheHelper.AddToCache(System.String,System.Object,System.Int32)">
+            <summary>
+            Add the New Cache into Cache Memory
+            </summary>
+            <param name="key">Specify the Cache Memory Key Name</param>
+            <param name="value">Specify the Cache Memory Key Value/Data</param>
+            <param name="expirationMinutes">Specify the Expiration in minutes</param>
+        </member>
+        <member name="M:MTLS_Cert_Lib.CacheHelper.GetFromCache(System.String)">
+            <summary>
+            Get the Cache Value from Cache Memory
+            </summary>
+            <param name="key">Enter the Cache Key Name</param>
+            <returns>Return the Cache Data Value</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.CacheHelper.RemoveFromCache(System.String)">
+            <summary>
+            Remove the Cache from Cache Memory
+            </summary>
+            <param name="key">Enter the Cache Key name to remove</param>
+        </member>
+        <member name="M:MTLS_Cert_Lib.CacheHelper.GetCertificate(System.String)">
+            <summary>
+            Get Certificate from Cache Memory
+            </summary>
+            <param name="key">Enter the Cache Key Name</param>
+            <returns></returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.HttpContextService.GetCurrentUser">
+            <summary>
+            To Get the Current User from Current Context Accessor
+            </summary>
+            <returns>Return the Current Username</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.HttpContextService.GetClientIp">
+            <summary>
+            To Get the Client Ip Address
+            </summary>
+            <returns>Return the IP address</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.HttpContextService.GetRequestPath">
+            <summary>
+            To get the Request Path
+            </summary>
+            <returns>return the request path</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.LoadCertificate">
+            <summary>
+            Loads a client certificate.
+            </summary>
+            <returns>An X509Certificate2 object.</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.GetCertificate">
+            <summary>
+            Get a client certificate.
+            </summary>
+            <returns>Return the Client Certificate</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.fetchCertificate">
+            <summary>
+            To Fetch the CLient Cretiifcate from Cache Memory if exists orelse get the Client Certificate from Given Client Certiifcate Path
+            </summary>
+            <returns>Returns the Client Certificate</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.GetHttpClientHandlerWithCertificate(System.Security.Cryptography.X509Certificates.X509Certificate2)">
+            <summary>
+            To get the Client Certificate from Given Cettificate
+            </summary>
+            <returns>HttpClientHandler instance configured with the automatic default certificate.</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.GetHttpClientHandler">
+            <summary>
+            To get the Client Certificate from Cache Memory
+            </summary>
+            <returns>HttpClientHandler instance configured with the automatic default certificate.</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.GetHttpClientHandlerAutomaticFromClient">
+            <summary>
+            To get the Client Certificate Automatically from current system (Installed Client Certification)
+            </summary>
+            <returns>HttpClientHandler instance configured with the automatic default certificate.</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.CreateHttpClientWithCertificate(System.Security.Cryptography.X509Certificates.X509Certificate2)">
+            <summary>
+            Creates the HttpClient instance that uses a client certificate.
+            </summary>
+            <param name="certificate">The client certificate.</param>
+            <returns>HttpClient instance configured with the certificate.</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.CreateHttpClient">
+            <summary>
+            Creates the HttpClient instance
+            </summary>
+            <returns>Return the new HttpClient</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.CreateHttpClientAutomatic">
+            <summary>
+            Creates the HttpClient instance from Default System Certificate
+            </summary>
+            <returns> Creates and return the new HttpClient </returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.CreateHttpClientByHandler(System.Net.Http.HttpClientHandler)">
+            <summary>
+            Creates the HttpClient instance by pas the HttpClient Handler
+            </summary>
+            <param name="handler">Pass the Http Client Handler</param>
+            <returns></returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.HttpClientGet(System.Security.Cryptography.X509Certificates.X509Certificate2,System.String)">
+            <summary>
+            To Fetch the Data from Respective WebSite For GET Method
+            </summary>
+            <param name="certificate">Pass the Certificate</param>
+            <param name="url">Enter the Website Url</param>
+            <returns>Returns Http Response Message</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.HttpClientGet(System.String)">
+            <summary>
+            To Fetch the Data from Respective WebSite For GET Method
+            </summary>
+            <param name="url">Enter the Website Url</param>
+            <returns>Returns the Http Response Message</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.HttpClientGet(System.Net.Http.HttpClient,System.String)">
+            <summary>
+            To Fetch the Data from Respective WebSite For GET Method
+            </summary>
+            <param name="httpClient"></param>
+            <param name="url"></param>
+            <returns>Returns the Http Response Message</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.HttpClientPost(System.Security.Cryptography.X509Certificates.X509Certificate2,System.String,System.String)">
+            <summary>
+            To post/fetch the Data from Respective WebSite For POST Method
+            </summary>
+            <param name="certificate">Pass the Certificate</param>
+            <param name="url">Enter the Website Url</param>
+            <param name="jsonData">Pass the Json Data</param>
+            <returns>Returns the Http Response Message</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.HttpClientPost(System.String,System.String)">
+            <summary>
+            To post/fetch the Data from Respective WebSite For POST Method
+            </summary>
+            <param name="url">Enter the Website Url</param>
+            <param name="jsonData">Pass the Json Data</param>
+            <returns>Returns the Http Response Message</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.HttpClientPost(System.Net.Http.HttpClient,System.String,System.String)">
+            <summary>
+            To post/fetch the Data from Respective WebSite For POST Method
+            </summary>
+            <param name="httpClient">Pass the HttpClient</param>
+            <param name="url">Enter the Website Url</param>
+            <param name="jsonData">Pass the Json Data</param>
+            <returns>Returns the Http Response Message</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.GetHttpResponseContent(System.Net.Http.HttpResponseMessage)">
+            <summary>
+            To Get the HttpResponse Content string value Result
+            </summary>
+            <param name="response">Pass the HttpResponse Messgae</param>
+            <returns></returns>
+            <exception cref="T:System.Net.Http.HttpRequestException">Returns the Http Response Content</exception>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.GetHttpResponseContent``1(System.Net.Http.HttpResponseMessage)">
+            <summary>
+            To Get the HttpResponse Content DataType value Result
+            </summary>
+            <typeparam name="T">Pass the DataType</typeparam>
+            <param name="response">Pass the HttpResponse Messgae</param>
+            <returns></returns>
+            <exception cref="T:System.Net.Http.HttpRequestException">Returns the Http Response Content</exception>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.DeserializeJson``1(System.String)">
+            <summary>
+            To Deserialize the Json Content
+            </summary>
+            <typeparam name="T">Enter the Datatype</typeparam>
+            <param name="json">Enter the Repsone Json Content</param>
+            <returns>Returns the Deserialized object</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.GetCertificateBySerialNumber(System.String)">
+            <summary>
+            Find the certificate in the LocalMachine's Personal store
+            </summary>
+            <param name="SerialNumber">Enter the Required Client Certificate Serial NUmber</param>
+            <returns>Retuen the Client Certificate</returns>
+            <exception cref="T:System.Exception">Returns the X509 Certificate</exception>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.LoadCertificateBySerialNumber(System.String)">
+            <summary>
+            Find and Load the certificate in the LocalMachine's Personal store
+            </summary>
+            <param name="SerialNumber">Enter the Required Client Certificate Serial NUmber</param>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.GetCertificateByThumbprint(System.String)">
+            <summary>
+            Find the certificate in the LocalMachine's Personal store
+            </summary>
+            <param name="Thumbprint">Enter the Required Client Certificate Thumbprint</param>
+            <returns>Returns the Client Certificate</returns>
+            <exception cref="T:System.Exception">Returns the X509 Certificate</exception>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.LoadCertificateByThumbprint(System.String)">
+            <summary>
+            Find and Load the certificate from the LocalMachine's Personal store
+            </summary>
+            <param name="Thumbprint">Enter the Required Client Certificate Thumbprint</param>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.GetCertificateByIssuer(System.String)">
+            <summary>
+            Find the certificate in the LocalMachine's Personal store
+            </summary>
+            <param name="Issuer">Enter the Required Client Certificate Issuer</param>
+            <returns>Returns the Client Certificate</returns>
+            <exception cref="T:System.Exception">Returns the X509 Certificate</exception>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:MTLS_Cert_Lib.MTLSClientCertificate.LoadCertificateByIssuer(System.String)" -->
+        <member name="P:MTLS_Cert_Lib.MTLSClientCertificate.ClientCertificate_CacheKey">
+            <summary>
+            Set the Client Certificate Cache Key to Add in cache Memory (Default its set has:ClientCertificateCacheKey)
+            </summary>
+        </member>
+        <member name="P:MTLS_Cert_Lib.MTLSClientCertificate.ClientCertificatePath">
+            <summary>
+            To Set the Default Client Certificate Path
+            </summary>
+        </member>
+        <member name="P:MTLS_Cert_Lib.MTLSClientCertificate.ClientCertificatePassword">
+            <summary>
+            To Set the Default Client Certificate Password(optional based on the Client Certificate file)
+            </summary>
+        </member>
+        <member name="P:MTLS_Cert_Lib.MTLSClientCertificate.RequestUrl">
+            <summary>
+            To Set Default Request Url
+            </summary>
+        </member>
+        <member name="P:MTLS_Cert_Lib.MTLSClientCertificate.Certificate">
+            <summary>
+            To set default X509Certificate
+            </summary>
+        </member>
+        <member name="P:MTLS_Cert_Lib.MTLSClientCertificate.ClientHandler">
+            <summary>
+            To Set the Http Client Handler
+            </summary>
+        </member>
+        <member name="P:MTLS_Cert_Lib.MTLSClientCertificate.Client">
+            <summary>
+            To Set the HttpClient
+            </summary>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSServerCertification.ValidateServerCertificate(System.String)">
+            <summary>
+            Validates an SSL/TLS certificate for a given server.
+            </summary>
+            <param name="serverUrl">The server URL (e.g., https://example.com)</param>
+            <returns>True if the certificate is valid, otherwise false</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSServerCertification.ValidateServerCertificate">
+            <summary>
+            Validates an SSL/TLS certificate for a given server.
+            </summary>
+            <returns>True if the certificate is valid, otherwise false</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSServerCertification.ValidateServerCertificate(System.Security.Cryptography.X509Certificates.X509Certificate2)">
+            <summary>
+            Validates an SSL/TLS certificate
+            </summary>
+            <param name="serverCert2">Pass the SSL/TLS Certificate</param>
+            <returns>True if the certificate is valid, otherwise false</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSServerCertification.AuthenticateServer(System.String,System.String,System.String,System.String)">
+            <summary>
+            Authenticates a server using an expected thumbprint/Authority Key Identity/Issuer.
+            </summary>
+            <param name="serverUrl">The server URL</param>
+            <param name="expectedThumbprint">The expected certificate thumbprint</param>
+            <param name="expectedKeyIdentifier">The expected certificate Authority Key Identity</param>
+            <param name="expectedIssuer">The expected certificate Issuer</param>
+            <returns>True if the certificate matches the expected thumbprint/Key identifier/Issuer, otherwise false</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSServerCertification.AuthenticateServer(System.Security.Cryptography.X509Certificates.X509Certificate2,System.String,System.String,System.String)">
+            <summary>
+            Authenticates a server certificate using an expected thumbprint/Authority Key Identity/Issuer.
+            </summary>
+            <param name="serverCert2">The server Certificate</param>
+            <param name="expectedThumbprint">The expected certificate thumbprint</param>
+            <param name="expectedKeyIdentifier">The expected certificate Authority Key Identity</param>
+            <param name="expectedIssuer">The expected certificate Issuer</param>
+            <returns>True if the certificate matches the expected thumbprint/Key Identifier/Issuer, otherwise false</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSServerCertification.AuthenticateServer(System.String,System.String,System.String)">
+            <summary>
+            Authenticates a server certificate using an expected thumbprint/Authority Key Identity/Issuer.
+            </summary>
+            <param name="expectedThumbprint">The expected certificate thumbprint</param>
+            <param name="expectedKeyIdentifier">The expected certificate Authority Key Identity</param>
+            <param name="expectedIssuer">The expected certificate Issuer</param>
+            <returns>True if the certificate matches the expected thumbprint/Key Idenitifier/Issuer, otherwise false</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSServerCertification.GetServerCertificateFromLocalPersonalStore(System.String,System.String)">
+            <summary>
+            To Get the Server Certificate from localMachine Personal store
+            </summary>
+            <param name="subjectName">Enter the Server Certificate Subject Name</param>
+            /// <param name="issuer">Enter the Server Certificate Issuer</param>
+            <returns>Returns the Matched Server Certificate</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSServerCertification.GetServerCertificateFromLocalTrustedStore(System.String,System.String)">
+            <summary>
+            To Get the Server Certificate from localMachine Trusted Root store
+            </summary>
+            <param name="subjectName">Enter the Server Certificate Subject Name</param>
+            <param name="issuer">Enter the Server Certificate Issuer</param>
+            <returns>Returns the Matched Server Certificate</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSServerCertification.GetServerCertificateFromCurrentUserPersonalStore(System.String,System.String)">
+            <summary>
+            To Get the Server Certificate from Current User Personal store
+            </summary>
+            <param name="subjectName">Enter the Server Certificate Subject Name</param>
+            <param name="issuer">Enter the Server Certificate Issuer</param>
+            <returns>Returns the Matched Server Certificate</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSServerCertification.GetServerCertificateFromCurrentUserTrustedStore(System.String,System.String)">
+            <summary>
+            To Get the Server Certificate from Current User Trusted Root store
+            </summary>
+            <param name="subjectName">Enter the Server Certificate Subject Name</param>
+            <param name="issuer">Enter the Server Certificate Issuer</param>
+            <returns>Returns the Matched Server Certificate</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSServerCertification.GetRemoteServerCertificate(System.String,System.Int32)">
+            <summary>
+            To Get the Server Certificate from Server and port
+            </summary>
+            <param name="server">Enter the Certificate Server Name</param>
+            <param name="port">Enter the Csrtificate Server Port Number</param>
+            <returns>Returns the Matched Server Certificate</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSServerCertification.GetServerUrl">
+            <summary>
+            To Reterive the Current running Server Url
+            </summary>
+            <returns>Return the Server Url</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSServerCertification.getExistsCertificate(System.String)">
+            <summary>
+            To get the Existed Server Certificate
+            </summary>
+            <param name="keyName">Server Certificate Cache Key</param>
+            <returns>Returns the X509 Certificate</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSServerCertification.HttpClientGet(System.String,System.Net.Http.HttpClientHandler)">
+            <summary>
+            To Check the Server Url Certifcate Authenation
+            </summary>
+            <param name="serverUrl">Enter the Server url</param>
+            <param name="handler">Pass the Http Client Handler</param>
+            <returns>Return true if Http Get Request  success status code is true orelse false</returns>
+        </member>
+        <member name="P:MTLS_Cert_Lib.MTLSServerCertification.Server_Certificate_Issuer">
+            <summary>
+            To Set the Default Server Certificate Issuer, to fetch the Exists Issuer Certificate from current system shop
+            </summary>
+        </member>
+        <member name="P:MTLS_Cert_Lib.MTLSServerCertification.Server_Certificate_SubjectName">
+            <summary>
+            To Set the Default Server Certificate SubjectName, to fetch the Exists Subject Certificate from current system shop
+            </summary>
+        </member>
+        <member name="P:MTLS_Cert_Lib.MTLSServerCertification.Certificate">
+            <summary>
+            To Set the Default Server X509 Certificate
+            </summary>
+        </member>
+        <member name="P:MTLS_Cert_Lib.MTLSServerCertification.ServerCertificate_CacheKey">
+            <summary>
+            To Set the Server Certificate Cache Memory Key Name (Default its set has: ServerCertificateCacheKey)
+            </summary>
+        </member>
+    </members>
+</doc>
