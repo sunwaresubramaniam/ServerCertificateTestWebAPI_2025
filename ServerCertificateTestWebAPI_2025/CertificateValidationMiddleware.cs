@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http.Features;
 using MTLS_Cert_Lib;
 
+
 namespace ServerCertificateTestWebAPI_2025
 {
     public class CertificateValidationMiddleware
@@ -27,6 +28,7 @@ namespace ServerCertificateTestWebAPI_2025
             //X509Certificate2 serverCert = MTLSServerCertification.GetServerCertificateFromLocalPersonalStore("CN=sunwareServer");
             //bool isValidServerCertificate = MTLSServerCertification.ValidateServerCertificate(serverCert);
             MTLSServerCertification.Server_Certificate_SubjectName = "CN=sunwareServer";
+            MTLSServerCertification.Server_Certificate_Issuer = "CN=Sunware-mTLSCertificate";
             bool isValidServerCertificate = MTLSServerCertification.ValidateServerCertificate();
             if (isValidServerCertificate  == false)
             {

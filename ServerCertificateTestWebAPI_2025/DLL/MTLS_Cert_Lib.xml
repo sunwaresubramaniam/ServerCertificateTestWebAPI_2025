@@ -256,6 +256,12 @@
             <exception cref="T:System.Exception">Returns the X509 Certificate</exception>
         </member>
         <!-- Badly formed XML comment ignored for member "M:MTLS_Cert_Lib.MTLSClientCertificate.LoadCertificateByIssuer(System.String)" -->
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.getClientCertificate">
+            <summary>
+            To Get the Current Selected Client Certificate
+            </summary>
+            <returns></returns>
+        </member>
         <member name="P:MTLS_Cert_Lib.MTLSClientCertificate.ClientCertificate_CacheKey">
             <summary>
             Set the Client Certificate Cache Key to Add in cache Memory (Default its set has:ClientCertificateCacheKey)
@@ -379,6 +385,12 @@
             <param name="server">Enter the Certificate Server Name</param>
             <param name="port">Enter the Csrtificate Server Port Number</param>
             <returns>Returns the Matched Server Certificate</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSServerCertification.getServerCertificate">
+            <summary>
+            To Get the Current Selected Server Certificate
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:MTLS_Cert_Lib.MTLSServerCertification.GetServerUrl">
             <summary>
