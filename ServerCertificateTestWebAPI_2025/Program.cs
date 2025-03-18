@@ -4,18 +4,25 @@ using Microsoft.AspNetCore.Server.Kestrel.Https;
 using MTLS_Cert_Lib;
 using Serilog;
 using ServerCertificateTestWebAPI_2025;
-using ServerCertificateTestWebAPI_2025.Interface;
 using ServerCertificateTestWebAPI_2025.Services;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configure Serilog
+//// Configure Serilog
 builder.Host.UseSerilog((context, config) =>
 {
     config
         .WriteTo.Console()
         .WriteTo.File("Logs/ServerCertificationTestWebAPI-.log", rollingInterval: RollingInterval.Day);
 });
+
+//// ✅ Configure Serilog
+//builder.Host.UseSerilog((context, config) =>
+//{
+//    config.ReadFrom.Configuration(context.Configuration);
+//});
+builder.Services.AddLogging();
 
 //// 1️⃣ Add Certificate Authentication
 builder.Services
@@ -41,7 +48,16 @@ builder.Services.Configure<IISServerOptions>(options =>
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddSingleton<HttpContextService>();
 // 🔹 Add TFLogger Service
-builder.Services.AddSingleton<ITFLogger, TFLogger>();
+//builder.Services.AddSingleton<ITFLogger, TFLogger>();
+
+// Register ITFLogger
+//builder.Services.AddSingleton<Microsoft.TeamFoundation.Common.ITFLogger, Microsoft.TeamFoundation.Common.TFLogger>(); // Replace TFLogger with your actual implementation
+
+
+builder.Services.AddSingleton<MTLS_Cert_Lib.ITFLogger, MTLS_Cert_Lib.TFLogger>();
+// ✅ Register any other dependent services
+builder.Services.AddTransient<TFLoggerService>();
+
 
 var app = builder.Build();
 

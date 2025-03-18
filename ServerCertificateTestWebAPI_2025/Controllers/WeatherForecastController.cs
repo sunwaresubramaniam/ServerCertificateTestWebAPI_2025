@@ -2,7 +2,8 @@ using Microsoft.AspNetCore.Authentication.Certificate;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MTLS_Cert_Lib;
-using ServerCertificateTestWebAPI_2025.Interface;
+using ServerCertificateTestWebAPI_2025.Services;
+
 
 namespace ServerCertificateTestWebAPI_2025.Controllers;
 //[Authorize(AuthenticationSchemes = CertificateAuthenticationDefaults.AuthenticationScheme)]
@@ -19,9 +20,9 @@ public class WeatherForecastController : ControllerBase
 
     private readonly HttpContextService _contextService;
 
-    private readonly ITFLogger _logger;
+    private readonly TFLoggerService _logger;
 
-    public WeatherForecastController(HttpContextService contextService, ITFLogger logger)
+    public WeatherForecastController(HttpContextService contextService, TFLoggerService logger)
     {
         _contextService = contextService;
         _logger = logger;
@@ -37,7 +38,7 @@ public class WeatherForecastController : ControllerBase
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<WeatherForecast> Get()
     {
-        _logger.LogDebug("Calling the Get method.");
+       _logger.LogInformation("Calling the Get method.");
         return Enumerable.Range(1, 5).Select(index => new WeatherForecast
         {
             Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
@@ -50,11 +51,11 @@ public class WeatherForecastController : ControllerBase
     [HttpGet("secure-data")]
     public IActionResult GetSecureData()
     {
-        _logger.LogInfo("Calling the Get Secure Data.");
+        _logger.LogInformation("Calling the Get Secure Data.");
         var clientCert = HttpContext.Connection.ClientCertificate;
         if (clientCert == null)
         {
-            _logger.LogError("Error:", new Exception("Client certificate is required."));
+            _logger.LogError("Error:Client certificate is required.");
             return Forbid("Client certificate is required.");
         }
         return Ok($"Secure data for certificate: {clientCert.Subject}");
