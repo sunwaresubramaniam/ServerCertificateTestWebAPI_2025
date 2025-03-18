@@ -70,23 +70,40 @@
             <returns>Returns the Client Certificate</returns>
             <exception cref="T:System.ArgumentException"></exception>
         </member>
-        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.GetHttpClientHandlerWithCertificate(System.Security.Cryptography.X509Certificates.X509Certificate2)">
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.GetHttpClientHandlerWithCertificate(System.Security.Cryptography.X509Certificates.X509Certificate2,System.String)">
             <summary>
             To get the Client Certificate from Given Cettificate
             </summary>
+            <param name="secretName">Enter the Azure Key Serect Name for validation(Optional)</param>
             <returns>HttpClientHandler instance configured with the automatic default certificate.</returns>
         </member>
-        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.GetHttpClientHandler">
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.SetHttpClientHandlerWithCertificate(System.Security.Cryptography.X509Certificates.X509Certificate2,System.String)">
+            <summary>
+            To Set the CLient Certificate from given Certificate
+            </summary>
+            <param name="certificate"></param>
+            <param name="secretName">Enter the Azure Key Serect Name for validation(Optional)</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.GetHttpClientHandler(System.String)">
             <summary>
             To get the Client Certificate from Cache Memory
             </summary>
+            <param name="secretName">Enter the Azure Key Serect Name for validation(Optional)</param>
             <returns>HttpClientHandler instance configured with the automatic default certificate.</returns>
         </member>
-        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.GetHttpClientHandlerAutomaticFromClient">
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.GetHttpClientHandlerAutomaticFromClient(System.String)">
             <summary>
             To get the Client Certificate Automatically from current system (Installed Client Certification)
             </summary>
+            <param name="secretName">Enter the Azure Key Serect Name for validation(Optional)</param>
             <returns>HttpClientHandler instance configured with the automatic default certificate.</returns>
+        </member>
+        <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.SetHttpClientHandlerAutomaticFromClient(System.String)">
+            <summary>
+            To Set the Client Certificate Automatically from current system (Installed Client Certification)
+            </summary>
+            <param name="secretName">Enter the Azure Key Serect Name for validation(Optional)</param>
         </member>
         <member name="M:MTLS_Cert_Lib.MTLSClientCertificate.CreateHttpClientWithCertificate(System.Security.Cryptography.X509Certificates.X509Certificate2)">
             <summary>

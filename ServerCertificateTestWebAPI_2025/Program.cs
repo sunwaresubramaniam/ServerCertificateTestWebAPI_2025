@@ -2,11 +2,20 @@
 using Microsoft.AspNetCore.Authentication.Certificate;
 using Microsoft.AspNetCore.Server.Kestrel.Https;
 using MTLS_Cert_Lib;
+using Serilog;
 using ServerCertificateTestWebAPI_2025;
 using ServerCertificateTestWebAPI_2025.Interface;
 using ServerCertificateTestWebAPI_2025.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Configure Serilog
+builder.Host.UseSerilog((context, config) =>
+{
+    config
+        .WriteTo.Console()
+        .WriteTo.File("Logs/ServerCertificationTestWebAPI-.log", rollingInterval: RollingInterval.Day);
+});
 
 //// 1️⃣ Add Certificate Authentication
 builder.Services
@@ -35,6 +44,8 @@ builder.Services.AddSingleton<HttpContextService>();
 builder.Services.AddSingleton<ITFLogger, TFLogger>();
 
 var app = builder.Build();
+
+app.UseSerilogRequestLogging(); // Enables logging for HTTP requests
 
 // Use the custom certificate authenicate middleware
 app.UseMiddleware<CertificateAuthenicateMiddleware>();
