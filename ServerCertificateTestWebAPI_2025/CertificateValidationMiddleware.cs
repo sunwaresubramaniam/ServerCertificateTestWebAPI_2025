@@ -23,12 +23,12 @@ namespace ServerCertificateTestWebAPI_2025
         
         public async Task Invoke(HttpContext context)
         {
-            //X509Certificate2 serverCert = context.Connection.ClientCertificate;
+            X509Certificate2 serverCert = context.Connection.ClientCertificate;
 
             //X509Certificate2 serverCert = MTLSServerCertification.GetServerCertificateFromLocalPersonalStore("CN=sunwareServer");
             //bool isValidServerCertificate = MTLSServerCertification.ValidateServerCertificate(serverCert);
-            MTLSServerCertification.Server_Certificate_SubjectName = "CN=sunwareServer";
-            MTLSServerCertification.Server_Certificate_Issuer = "CN=Sunware-mTLSCertificate";
+            MTLSServerCertification.Server_Certificate_SubjectName = "sunwareServer";
+            MTLSServerCertification.Server_Certificate_Issuer = "Sunware-mTLSCertificate";
             bool isValidServerCertificate = MTLSServerCertification.ValidateServerCertificate();
             if (isValidServerCertificate  == false)
             {
